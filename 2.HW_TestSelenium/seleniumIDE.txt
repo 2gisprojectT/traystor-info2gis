@@ -18,43 +18,37 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Продукты</td>
+	<td>link=2GIS</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='module-1-5-2']/div[2]/div/div/div/div</td>
+	<td>//div[@id='module-1-6-2']/div[2]/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Справка</td>
+	<td>assertText</td>
+	<td>link=Продукты</td>
+	<td>Продукты</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.header__wrapper</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Обратная связь</td>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=feedback_author_name</td>
-	<td>jk,,hj,</td>
+	<td>assertTitle</td>
+	<td>Всё о компании 2ГИС: новости, продукты, возможности</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=feedback_author_email</td>
-	<td>svdfbfgnf@hvhhfy.runghnljlhlhlih</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=feedback_post</td>
-	<td>fgnhmnyyumyum</td>
-</tr>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//input[@value='Отправить']</td>
+	<td>assertLocation</td>
+	<td>http://info.2gis.ru/novosibirsk</td>
 	<td></td>
 </tr>
 
