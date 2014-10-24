@@ -1,4 +1,4 @@
 language: python
 python:
   - "2.7"
-script: "nosetests test_travis_example.py"
+script: "nosetests /1.HW_Lion/UnitTest.py"
