@@ -5,29 +5,26 @@ class Lion:
         else:
             print('Error in input parameters')
 
-    def antilopa(self, antilopa):
-        if antilopa == 'antilopa':
-            if self. state == 'full':
-                print('Lion sleep')
-                self. state = 'hungry'
-            else:
-                print('Lion eat')
+    def antilopa(self):
+        if self. state == 'full':
+            self. state = 'hungry'
+            return 'Lion sleep'
+        else:
+            return 'Lion eat'
 
-    def hunter(self, hunter):
-        if hunter == 'hunter':
-            if self. state == 'full':
-                print('Run Lion, RUN!')
-                self. state = 'hungry'
-            else:
-                print('Run Lion, RUN!')
+    def hunter(self):
+        if self. state == 'full':
+            self. state = 'hungry'
+            return 'Run Lion, RUN!'
+        else:
+            return 'Run Lion, RUN!'
 
-    def tree(self, tree):
-        if tree == 'tree':
-            if self. state == 'full':
-                print('Lion see on tree')
-                self. state = 'hungry'
-            else:
-                print('Lion sleep')
+    def tree(self):
+        if self. state == 'full':
+            self. state = 'hungry'
+            return 'Lion see on tree'
+        else:
+            return 'Lion sleep'
 
-lion = Lion('hungry')
-lion .antilopa('antilopa')
+lionState = Lion('full')
+print(lionState.hunter())
