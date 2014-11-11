@@ -15,13 +15,12 @@ class Subscribe(TestCase):
         self.page.subscribe.enterTown()
         self.page.subscribe.enterEmail('fgoor@mail.ru')
         error = self.page.subscribe.enableShareButton()
-        self.assertTrue(error,'button is not active')
+        self.assertTrue(error,'wrong email')
 
     def test_unsubscribe(self):
         self.page.unsubscribe.clickUnsub()
         self.page.unsubscribe.enterEmail('fgoor@mail.ru')
-        error = self.page.unsubscribe.resultE()
-        self.assertEqual(u'Укажите правильный адрес электронной почты', error, 'wrong data')
+        self.assertEqual(u'Укажите правильный адрес электронной почты', self.page.unsubscribe.resultEmail(), 'wrong email')
 
     def tearDown(self):
         self.driver.close()
@@ -41,10 +40,10 @@ class Feedback(TestCase):
         errorName = self.page.feedback.resultName()
         errorEmail = self.page.feedback.resultEmail()
         errorPost = self.page.feedback.resultPost()
-        self.assertNotEqual(u'Укажите ваше имя', errorName, 'wrong or null name')
+        self.assertNotEqual(u'Укажите ваше имя', errorName, 'empty name')
         self.assertNotEqual(u'Укажите правильный адрес электронной почты', errorEmail,'wrong email')
-        self.assertNotEqual(u'Укажите ваш адрес электронной почты', errorEmail,'null email')
-        self.assertNotEqual(u'Введите текст сообщения', errorPost, 'wrong or null post')
+        self.assertNotEqual(u'Укажите ваш адрес электронной почты', errorEmail,'empty email')
+        self.assertNotEqual(u'Введите текст сообщения', errorPost, 'empty post')
 
     def tearDown(self):
         self.driver.close()
@@ -77,7 +76,7 @@ class Distribution(TestCase):
         self.page.distribution.email('jnjkbnmail@ndsdnh.ru')
         self.page.distribution.button()
         result = self.page.distribution.result()
-        self.assertEqual(u'Мы добавили вас в рассылку',result,'fuck')
+        self.assertEqual(u'Мы добавили вас в рассылку',result,'wrong email')
 
     def tearDown(self):
         self.driver.close()
